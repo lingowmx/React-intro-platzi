@@ -1,0 +1,17 @@
+
+.TodoSearch{
+    width: 240px;
+    height: 40px;
+    font-size: 16px;
+    display: flex;
+    margin: 8px auto;
+    padding: 2px 2px 2px 8px;
+    border-radius: 8px;
+    border: 1px solid green;
+
+
+}
+.TodoSearch:focus{
+    background-color: rgb(179, 220, 206);
+
+}
