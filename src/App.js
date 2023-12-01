@@ -15,19 +15,29 @@ import React from "react";
 // ];
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 
-function App() {
-  const localStorageTodos = localStorage.getItem("TODOS_V1");
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
 
-  let parsedTodos;
-  if (!localStorageTodos) {
-    localStorage.setItem("TODOS_V1", JSON.stringify([]));
-    parsedTodos = [];
+  let parsedItem;
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   } else {
-    parsedTodos = JSON.parse(localStorageTodos);
+    parsedItem = JSON.parse(localStorageItem);
   }
+  const [item, setItem] = React.useState(parsedItem)
 
+
+  const saveItem = (newItems) => {
+    localStorage.setItem(itemName, JSON.stringify(newItems))
+    setItem(newItems);
+  };
+  return [item, saveItem];
+}
+
+function App() {
   // let parsedTodos = JSON.parse(localStorageTodos);
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
   const searchedTodos = todos.filter(
     (todo) => {
@@ -39,10 +49,7 @@ function App() {
   );
   // importante verificar como se hacen los returns con llaves sin llaves etc.
 
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
-    setTodos(newTodos);
-  }
+  
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
