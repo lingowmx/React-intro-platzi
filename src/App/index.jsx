@@ -1,9 +1,4 @@
-import { TodoTitle } from "../TodoTitle";
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { TodoItem } from "../TodoItem";
-import { CreateTodoButton } from "../CreateTodoButton";
+import { AppUI } from "./AppUI";
 import { useLocalStorage } from "./useLocalStorage";
 import React from "react";
 
@@ -15,8 +10,6 @@ import React from "react";
 //   { text: "Cocinar para navidad", completed: false },
 // ];
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
-
-
 
 function App() {
   // let parsedTodos = JSON.parse(localStorageTodos);
@@ -31,8 +24,6 @@ function App() {
     // todo.text.toLowerCase().includes(searchValue.toLocaleLowerCase())
   );
   // importante verificar como se hacen los returns con llaves sin llaves etc.
-
-  
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -53,27 +44,16 @@ function App() {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-
   return (
-    <React.Fragment>
-      <TodoTitle />
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TodoList>
-        {searchedTodos.map((todo) => {
-          return (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-              onComplete={() => completeTodo(todo.text)}
-              onDelete={() => deleteTodo(todo.text)}
-            />
-          );
-        })}
-      </TodoList>
-      <CreateTodoButton />
-    </React.Fragment>
+    <AppUI
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 }
 
