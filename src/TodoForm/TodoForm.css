@@ -1,0 +1,31 @@
+form {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid blue;
+  background-color: rgb(127, 255, 127);
+}
+
+label {
+  font-size: 18px;
+  margin: 16px;
+}
+
+textarea{
+  width: 200px;
+  padding-left: 8px;
+  margin-bottom: 12px;
+}
+
+.TodoForm-button--container{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  width: 170px;
+}
