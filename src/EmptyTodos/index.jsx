@@ -1,9 +1,9 @@
 
 
 function EmptyTodos() {
-
     return (
-      <p>Crea tu primer tarea</p>
+      <p>La tarea que buscas no existe, creala!</p>
+      
     );
   }
   

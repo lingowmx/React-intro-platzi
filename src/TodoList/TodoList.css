@@ -1,4 +1,11 @@
 .TodoList{
+    width: 90%;
+    margin: 0 auto ;
+    background: rgb(102,67,181);
+    background: radial-gradient(circle, rgba(102,67,181,1) 45%, rgba(67,15,88,1) 86%);
+    border: 1px solid black;
+    border-radius: 12px;
     padding: 16px;
     list-style: none;
+    box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.49);
 }

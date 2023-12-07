@@ -15,8 +15,7 @@ import React from "react";
 function App() {
   return (
     <TodoProvider>
-
-    <AppUI
+      <AppUI
       // loading={loading}
       // error={error}
       // completedTodos={completedTodos}
@@ -27,7 +26,7 @@ function App() {
       // completeTodo={completeTodo}
       // deleteTodo={deleteTodo}
       />
-      </TodoProvider>
+    </TodoProvider>
   );
 }
 

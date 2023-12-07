@@ -6,13 +6,14 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  border: 1px solid blue;
-  background-color: rgb(127, 255, 127);
+  padding: 18px;
+  border: 1px solid none;
+  border-radius: 12px;
+  background-color: #d5def5;
 }
 
 label {
-  font-size: 18px;
+  font-size: 22px;
   margin: 16px;
 }
 
@@ -24,8 +25,31 @@ textarea{
 
 .TodoForm-button--container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   align-items: center;
   width: 170px;
+}
+
+.TodoForm-button--cancel{
+  background-color: rgb(166, 163, 163);
+  width: 80px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.TodoForm-button--cancel:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
+
+
+.TodoForm-button--add{
+  background-color: green;
+  width: 80px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.TodoForm-button--add:hover{
+  scale: 1.1;
+  cursor: pointer;
 }

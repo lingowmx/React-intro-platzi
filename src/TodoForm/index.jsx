@@ -6,6 +6,7 @@ function TodoForm() {
   const {
     addTodo,
     setOpenModal,
+    setSearchValue,
   } = React.useContext(TodoContext);
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
@@ -14,6 +15,7 @@ function TodoForm() {
     event.preventDefault();
     setOpenModal(false);
     addTodo(newTodoValue);
+    setSearchValue('')
   };
   const onCancel = () => {
     setOpenModal(false)

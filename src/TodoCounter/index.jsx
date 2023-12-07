@@ -10,13 +10,13 @@ function TodoCounter() {
   return totalTodos === completedTodos ? (
     <h2 
     className="TodoCounter">
-      Tomate una chela, no tienes tareas pendientes
+     No tienes tareas pendientes.
       </h2>
   ) : (
     <h2 
     className="TodoCounter">
       Tareas Completadas 
-      <span>{completedTodos}</span> de <span>{totalTodos}</span></h2>
+       <span> {completedTodos} </span> de <span>{totalTodos}</span></h2>
   );
 }
 

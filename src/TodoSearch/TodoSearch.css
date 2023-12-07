@@ -12,6 +12,12 @@
 
 }
 .TodoSearch:focus{
-    background-color: rgb(179, 220, 206);
+    background-color: rgb(192, 222, 212);
+}
 
+.TodoSearch:hover{
+    scale: 1.2;
+}
+.TodoSearch:focus-visible{
+    outline: none;
 }

@@ -10,7 +10,7 @@ const {
 } = React.useContext(TodoContext)
   return (
     <input
-      placeholder="Escribe aqui tu tarea"
+      placeholder="Buscador de tareas"
       className="TodoSearch"
       value={searchValue}
       onChange={(event) => {
